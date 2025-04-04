@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Proxxim Solutions – Corporate IT & Marketing Services Regsync Landing" />
+  <title>Proxxim Solutions | B2B IT & Lead Generation</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="./core/main.css" rel="stylesheet">
+  <style>
+    .btn-black {
+      background-color: #000;
+      color: #fff;
+    }
+    .nav-link:hover {
+      border-bottom: 2px solid black;
+    }
+    .card {
+      border: 1px solid #e5e7eb;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      padding: 2rem;
+    }
+  </style>
+</head>
+<script>
+    // Data for the chart
+    var ctx = document.getElementById('costComparisonChart').getContext('2d');
+    var costComparisonChart = new Chart(ctx, {
+      type: 'bar', // Bar chart type
+      data: {
+        labels: ['Regsync (12K/year)', 'UL Solutions (100K/year)'], // Labels for the bars
+        datasets: [{
+          label: 'Annual Cost (USD)',
+          data: [12000, 100000], // Data points for the bars
+          backgroundColor: ['#28a745', '#dc3545'], // Bar colors (green for Regsync, red for UL Solutions)
+          borderColor: ['#218838', '#c82333'], // Border colors
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true, // Starts the Y-axis from 0
+            ticks: {
+              stepSize: 20000, // Adjust step size on the Y-axis for better scaling
+            }
+          }
+        },
+        plugins: {
+          tooltip: {
+            callbacks: {
+              label: function(tooltipItem) {
+                // Add ROI calculation in the tooltip
+                let roi = (12000 / 100000) * 100;
+                return tooltipItem.dataset.label + ': $' + tooltipItem.raw + ' (' + roi.toFixed(1) + '% ROI)';
+              }
+            }
+          }
+        }
+      }
+    });
+  </script>
+  
+<body class="bg-white text-gray-900 font-sans">
+  <!-- Top Nav -->
+  <header class="border-b sticky top-0 bg-white z-50">
+    <nav class="container mx-auto flex justify-between items-center py-4 px-6">
+      <h2 class="text-xl font-bold tracking-tight">PROXXIM SOLUTIONS LLC.</h2>
+      <ul class="flex gap-8 text-sm font-medium">
+        <li><a href="../index.html" class="nav-link">Home</a></li>
+        <li><a href="../pages/industries.html" class="nav-link">Industries</a></li>
+        <li><a href="../pages/services.html" class="nav-link">Services</a></li>
+        <li><a href="../pages/products.html" class="nav-link">Products</a></li>
+        <li><a href="../pages/software.html" class="nav-link">Software</a></li>
+        <li><a href="../pages/about.html" class="nav-link">About</a></li>
+        <li><a href="../pages/investors.html" class="nav-link">Investors</a></li>
+        <li><a href="../pages/contact.html" class="btn-black px-4 py-2 rounded">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <!-- Hero Section for Regsync -->
+  <section id="home" class="bg-gray-50 py-24 px-6 text-center">
+    <h2 class="text-5xl font-extrabold mb-4">Regsync – Global Chemical Compliance Made Simple</h2>
+    <h3 class="text-3xl font-extrabold mb-4">Automate your regulatory compliance checks across multiple regions.</h3>
+    <p class="text-xl mb-8 max-w-2xl mx-auto">Regsync offers real-time, automated regulatory compliance analysis for chemicals in the global market. Streamline your operations with a service trusted by industries worldwide.</p>
+    <a href="../pages/contact.html" class="btn-black px-6 py-3 rounded text-lg">Try Regsync Today</a>
+  </section>
+
+  <!-- Features Section for Regsync -->
+  <section id="regsync-features" class="container mx-auto py-24 px-6">
+    <h3 class="text-3xl font-bold mb-10 text-center">Why Choose Regsync?</h3>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="card">
+        <h4 class="text-xl font-semibold mb-2">Global Compliance Coverage</h4>
+        <p>Ensure compliance across multiple global regulations including REACH, CLP, OSHA, and more.</p>
+      </div>
+      <div class="card">
+        <h4 class="text-xl font-semibold mb-2">Real-time Data</h4>
+        <p>Instant access to regulatory updates and compliance requirements to keep your business ahead.</p>
+      </div>
+      <div class="card">
+        <h4 class="text-xl font-semibold mb-2">Automated Workflows</h4>
+        <p>Automate the process of checking and updating chemical compliance using advanced AI tools.</p>
+      </div>
+      <div class="card">
+        <h4 class="text-xl font-semibold mb-2">Budget and More Friendly Compared to UL SOLUTIONS</h4>
+        <p>Regsync is a cost-effective solution for businesses of all sizes, providing high-quality compliance checks without the hefty price tag. $100K at high-tech firms VS $12K per year with us.</p>
+      </div>
+      
+      <div class="card">
+        <h4 class="text-xl font-semibold mb-2">Code Friendly API Inference</h4>
+        <p>Regsync offers an easy-to-integrate API for businesses that prefer a seamless code experience. Our API allows you to easily perform real-time regulatory checks, empowering developers to build compliant solutions with ease.</p>
+      </div>
+      <div class="card">
+        <h4 class="text-xl font-semibold mb-2">Scalable & Secure Compliance</h4>
+        <p>Regsync ensures compliance scales with your business. Whether you're a startup or an enterprise, we provide secure, reliable compliance solutions that grow with your needs, without compromising on security.</p>
+      </div>
+      
+      </div>
+    </div>
+    <div class="text-center mt-8">
+      <a href="./pages/contact.html" class="btn-black px-6 py-3 rounded">Start Your Free Trial</a>
+    </div>
+  </section>
+
+  <!-- Call to Action (CTA) Section -->
+  <section class="bg-black text-white py-20 text-center">
+    <h3 class="text-3xl font-bold mb-4">Ready to Scale Your Compliance Efforts?</h3>
+    <p class="text-lg mb-6">Let Proxxim Solutions help streamline your chemical regulatory needs with **Regsync**. Don’t let compliance slow you down.</p>
+    <a href="../pages/contact.html" class="btn-black px-6 py-3 rounded">Get Started Now</a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black text-white text-sm py-6 text-center">
+    <p>&copy; 2025 Proxxim Solutions. All rights reserved.</p>
+  </footer>
+</body>
+</html>

@@ -21,10 +21,62 @@
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
       padding: 2rem;
     }
+    .top-banner {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: show /* Initially hidden */
+}
+
+.top-banner a {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  background-color: #000;
+  padding: 8px 16px;
+  border-radius: 5px;
+}
+
+.top-banner a:hover {
+  background-color: #444;
+}
+
+body {
+  padding-top: 60px; /* Adjust to account for the banner height */
+}
+
+/* Show the banner when the user scrolls */
+.top-banner.show {
+  display: block;
+}
   </style>
+  <script>
+    window.onscroll = function() {
+  var banner = document.querySelector('.top-banner');
+  if (window.scrollY > 100) {  // Adjust the scrollY value as needed
+    banner.classList.add('show');
+  } else {
+    banner.classList.remove('show');
+  }
+};
+
+  </script>
 </head>
 <body class="bg-white text-gray-900 font-sans">
   <!-- Top Nav -->
+  <div class="top-banner">
+    <p>🚨 Don't miss out! Lock in your STM32 microcontroller purchase before the April 9 tariff hike! Secure your supply at $0.85/unit, MOQ 1,000. <a href="./sites/Pre-Tariff-Semiconductor-april-2025.html" class="btn-black text-white">Get a Quote Now</a></p>
+  </div>
+
+
   <header class="border-b sticky top-0 bg-white z-50">
     <nav class="container mx-auto flex justify-between items-center py-4 px-6">
       <h2 class="text-xl font-bold tracking-tight">PROXXIM SOLUTIONS LLC.</h2>
@@ -139,7 +191,7 @@
   <!-- Contact -->
   <section id="contact" class="container mx-auto py-20 px-6">
     <h3 class="text-3xl font-bold mb-10 text-center">Let's Connect</h3>
-    <a href="/pages/contact.html" class="btn-black px-6 py-3 rounded  text-center">Connect with us.</a>
+    <a href="/pages/contact.html" class="btn-black px-6 py-3 rounded text-center">Connect with us.</a>
   </section>
 
   <!-- Footer -->
